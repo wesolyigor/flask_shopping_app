@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cookie.css') }}">
+    {% endblock %}
+
+
+
+</head>
+<body>
+
+{% block mainnav %}
+
+{% include '_header.html' %}
+
+{% endblock %}
+
+
+<main class="container">
+
+    {% include '_flash.html' %}
+
+    <div class="row">
+        <div class="col-9">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </div>
+    </div>
+
+    <div class="col-3">
+        {% block aside %}
+
+        {% endblock %}
+    </div>
+
+</main>
+
+{% include '_footer.html' %}
+
+{% include '_cookie.html' %}
+
+{% block script %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+
+
+
+{% endblock %}
+
+
+
+
+</body>
+</html>
