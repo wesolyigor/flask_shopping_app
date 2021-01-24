@@ -3,10 +3,10 @@ from flask_login import login_user, logout_user
 from werkzeug.utils import redirect
 
 from app import db
-from app.forms.user_forms import LoginForm, SignUpForm
-from app.models.user_models import User
+from app.auth.forms import LoginForm, SignUpForm
+from app.auth.models import User
 
-bp_auth = Blueprint('auth', __name__, url_prefix='/auth')
+bp_auth = Blueprint('auth', __name__, url_prefix='/auth', template_folder='templates')
 
 
 @bp_auth.route('/login', methods=['GET', 'POST'])

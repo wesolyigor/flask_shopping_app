@@ -3,10 +3,10 @@ from flask_login import current_user, login_required
 from werkzeug.utils import redirect
 
 from app import db
-from app.forms.user_forms import ChangePasswordForm, DeleteUserForm
-from app.models.user_models import User
+from app.auth.forms import ChangePasswordForm, DeleteUserForm
+from app.auth.models import User
 
-bp_user = Blueprint('user', __name__, url_prefix='/user')
+bp_user = Blueprint('user', __name__, url_prefix='/user', template_folder='templates')
 
 
 @bp_user.route('/<username>')

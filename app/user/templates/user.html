@@ -1,4 +1,4 @@
-{% extends '_base.html' %}
+{% extends 'partials/_base.html' %}
 
 {% set modal_id='deleteModalForm' %}
 {% set btn_id='deleteForm' %}
@@ -16,7 +16,7 @@
 
 </article>
 {% with action = url_for("user.delete_user", username=user.username) %}
-{% include '_modal_form.html' %}
+{% include 'partials/_modal_form.html' %}
 {% endwith %}
 
 

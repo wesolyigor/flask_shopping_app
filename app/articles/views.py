@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template
 from sqlalchemy import desc
 
-from app.models.article_model import Article
+from app.articles.model import Article
 
-bp_article = Blueprint('articles', __name__, url_prefix='/articles')
+bp_article = Blueprint('articles', __name__, url_prefix='/articles', template_folder='templates')
 
 
 @bp_article.route('/')

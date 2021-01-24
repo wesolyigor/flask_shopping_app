@@ -4,10 +4,10 @@ from sqlalchemy import desc
 from werkzeug.utils import redirect
 
 from app import db
-from app.forms.article_forms import ArticleForm
-from app.models.article_model import Article
+from app.articles.forms import ArticleForm
+from app.articles.model import Article
 
-bp_admin = Blueprint('admin', __name__, url_prefix='/cleaver-admin')
+bp_admin = Blueprint('admin', __name__, url_prefix='/cleaver-admin', template_folder='templates')
 
 
 @bp_admin.route('/')
