@@ -2,3 +2,5 @@
 *.pyc
 *.db
 migrations
+node_modules
+.Ds_Store

@@ -1,12 +1,28 @@
-{% extends 'partials/_base.html' %}
+{% extends 'login.html' %}
 
 
 {% block content %}
+<main>
+    <div class="cover">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 login-section-wrapper ">
+                <div class="brand-wrapper">
+                    <b><h2><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"
+                                         class="logo"> Register</h2></b>
 
-<div class="col-6">
-    {% include 'partials/_form.html' %}
+                    <p></p>
+                    {% include 'partials/_form.html' %}
+                </div>
+                </div>
+            </div>
+        </div>
 
-</div>
+    </div>
+</main>
 
 
 {% endblock %}
+
+
+

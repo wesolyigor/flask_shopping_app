@@ -1,0 +1,50 @@
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, SelectField
+from wtforms.validators import DataRequired, Length, Optional, InputRequired
+
+
+# class UserDetails(Form):
+#     group_id = SelectField(u'Group', coerce=int)
+#
+#
+# def edit_user(request, id):
+#     user = User.query.get(id)
+#     form = UserDetails(request.POST, obj=user)
+#     form.group_id.choices = [(g.id, g.name) for g in Group.query.order_by('name')]
+
+
+class CategoryForm(FlaskForm):
+    category_name = StringField('category', validators=[Length(min=3, message="Minimum  znaków"),
+                                                        DataRequired(),
+                                                        InputRequired("Input is required")])
+    submit = SubmitField('Dodaj')
+
+
+class ProductForm(FlaskForm):
+    category = SelectField('category', choices=CategoryForm())
+    name = StringField('name', validators=[Length(min=3, message="Minimum 3 znaków"),
+                                           DataRequired('Data is required'),
+                                           InputRequired("Input is required")])
+    quantity = StringField('quantity', validators=[Length(min=1, message="Minimum 1 znaków"),
+                                                   Optional()])
+    info = StringField('additional info', validators=[Length(min=1, message="Minimum 1 znaków"),
+                                                      Optional()])
+    submit = SubmitField('Dodaj')
+
+
+from app import db
+
+
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    category = db.Column(db.String, nullable=False)
+    quantity = db.Column(db.String, nullable=True)
+    info = db.Column(db.String, nullable=True)
+
+
+# class Category(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String, nullable=True)
+
+

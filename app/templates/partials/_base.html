@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cookie.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+
     {% endblock %}
 
 
 
 </head>
-<body>
 
 {% block mainnav %}
 
@@ -26,6 +30,10 @@
 
 {% endblock %}
 
+<body>
+
+
+{% block main %}
 
 <main class="container">
 
@@ -48,6 +56,7 @@
     </div>
 
 </main>
+{% endblock %}
 
 {% include 'partials/_footer.html' %}
 

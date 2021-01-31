@@ -1,11 +1,75 @@
-{% extends 'partials/_base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+{% block mainnav %}
+
+{% endblock %}
 
 {% block content %}
 
-<div class="p-3">
-    {% include 'partials/_form.html' %}
-</div>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+          <div class="brand-wrapper">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo">
+          </div>
+          <div class="login-wrapper my-auto">
+            <h2 class="login-title">Shopping app</h2>
+            <h3 class="login-title-2">Never forget anything <h3 class="login-title-3">again!</h3></h3>
+                  {% include 'partials/_form.html' %}
 
+            <a href="#!" class="forgot-password-link">Forgot password?</a>
+            <p class="login-wrapper-footer-text">Don't have an account? <b><a href="{{ url_for('auth.signup') }}" class="text-reset">Register here</a></b></p>
+          </div>
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="{{ url_for('static', filename='images/{}'.format(random)) }}" class="login-img">
+        </div>
+      </div>
+    </div>
+
+    {% set modal_id='articleModalForm' %}
+    {% set btn_id='addForm' %}
+    {% set form_title='Register' %}
+
+
+    <button class="btn btn-primary" id="{{ btn_id }}" data-target="#{{ modal_id }}" data-toggle="modal">Register</button>
+
+    {% include 'partials/_modal_form.html' %}
+
+
+  </main>
 {% endblock %}
+
+    {% include 'partials/_footer.html' %}
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script>
+
+        $('#{{ modal_id }}').on('shown.bs.modal', function () {
+                $('#{{ btn_id }}').trigger('focus')
+        })
+
+  </script>
+</body>
+</html>
 

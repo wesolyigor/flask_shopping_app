@@ -1,0 +1,29 @@
+{% extends 'login.html' %}
+
+{% block content %}
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 login-section-wrapper">
+                <div class="brand-wrapper">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo">
+                </div>
+                <div class="login-wrapper my-auto">
+                    <h2 class="login-title">Thank you. Bye!</h2>
+
+                    <a href="{{  url_for('auth.login') }}" class="btn btn-primary">Login Again</a>
+                    <p></p>
+                    <p class="login-wrapper-footer-text">Don't have an account? <b><a
+                            href="{{ url_for('auth.signup') }}" class="text-reset">Register here</a></b></p>
+                </div>
+            </div>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="{{ url_for('static', filename='images/{}'.format(random)) }}" class="login-img">
+            </div>
+        </div>
+    </div>
+
+
+</main>
+{% endblock %}

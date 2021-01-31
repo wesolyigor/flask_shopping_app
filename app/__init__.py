@@ -25,8 +25,11 @@ def create_app():
     from app.user.user_views import bp_user
     app.register_blueprint(bp_user)
 
-    from app.articles.views import bp_article
-    app.register_blueprint(bp_article)
+    from app.errors import page_not_found
+    app.register_error_handler(404, page_not_found)
+
+    # from app.articles.views import bp_article
+    # app.register_blueprint(bp_article)
 
     from app.admin.views import bp_admin
     app.register_blueprint(bp_admin)
