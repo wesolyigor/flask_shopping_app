@@ -3,60 +3,62 @@
 
 {% block content %}
 
+
+<div class="container">
+
 <div class="row">
 
-<div class="card-group">
   <div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
+    <div class="card">
 
-        <img src="{{ url_for('static', filename='images/app_1.jpg') }}" class="img-fluid" alt="app_1" height="400" width="400">
+        <img src="{{ url_for('static', filename='images/app_1.webp') }}" class="img-fluid" alt="app_1">
             <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title"><strong>Check Sales</strong></h5>
+    <p class="card-text">Check actual sales in Biedronka and Lidl markets.</p>
+    <a href="#" class="btn btn-success">Check</a>
       </div>
     </div>
     </div>
-</div>
 
 
-<div class="card-group">
+
+
   <div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
-
-<img src="{{ url_for('static', filename='images/app_2.jpg') }}" class="img-fluid" alt="app_2" width="400" height="400">
+    <div class="card" >
+        <a href="{{ url_for('order.orders') }}">
+      <img src="{{ url_for('static', filename='images/app_2.webp') }}" class="img-fluid" alt="app_2">
+            </a>
         <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title"><strong>Plan your purchases</strong></h5>
+    <p class="card-text">Plan your shopping.</p>
+    <a href="{{ url_for('order.orders') }}" class="btn btn-success">Plan</a>
   </div>
 </div>
 </div>
-</div>
 
 
-<div class="card-group">
-  <div class="col-sm-6">
-    <div class="card" style="width: 18rem;">
-<img src="{{ url_for('static', filename='images/app_3.jpg') }}" class="img-fluid" alt="app_3" width="400">
+  <div class="col-sm-4">
+    <div class="card">
+        <a href="">
+        <img src="{{ url_for('static', filename='images/app_3.webp') }}" class="img-fluid">
+            </a>
         <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  </div>
-</div>
-</div>
+    <h5 class="card-title"><strong>My Orders</strong></h5>
+    <p class="card-text">Your last orders in one place.</p>
+    <a href="#" class="btn btn-success">Check</a>
 
-<div class="card-group">
-  <div class="col-sm-6">
-    <div class="card" style="width: 18rem;">
-    <img src="{{ url_for('static', filename='images/app_4.jpg') }}" class="img-fluid" alt="app_4" height="400">
+  </div>
+</div>
+</div>
+<p> </p>
+
+  <div class="col-sm-4">
+    <div class="card" >
+    <img src="{{ url_for('static', filename='images/app_4.webp') }}" class="img-fluid">
         <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <h5 class="card-title"><strong>Culinary Recipes</strong></h5>
+    <p class="card-text">Check what ingredients you need. </p>
+    <a href="#" class="btn btn-success">Check</a>
   </div>
 </div>
 </div>
@@ -64,31 +66,5 @@
 
 
 
-<div class="card-deck">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
 
 {% endblock %}

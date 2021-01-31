@@ -1,0 +1,52 @@
+{% extends 'partials/_base.html' %}
+
+
+{% block content %}
+
+  {% include '_add_order.html' %}
+
+
+  {% if orders.count() > 0 %}
+
+    {% for order in orders %}
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+      <h5 class="card-title">{{ order.name }}</h5>
+      <p class="card-text">{{ order.info }}</p>
+      <a href="{{  url_for('order.orders', order_id=order.id) }}" class="btn btn-primary">Check</a>
+      </div>
+      </div>
+
+
+    {% endfor %}
+
+
+  {% else %}
+
+    <h3>There's no orders. Change it!</h3>
+
+  {% endif %}
+
+
+
+
+{% endblock %}
+
+
+
+{% block script %}
+
+  {{ super() }}
+
+  <script>
+
+          $('#{{ modal_id }}').on('shown.bs.modal', function () {
+                  $('#{{ btn_id }}').trigger('focus')
+          })
+
+  </script>
+
+
+
+{% endblock %}

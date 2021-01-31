@@ -28,7 +28,7 @@ def login():
         flash(f'You are logged in!', 'success')
         return redirect(request.args.get('next') or url_for('main.home'))
 
-    random_image = f"shop_{randint(1, 5)}.jpg"
+    random_image = f"shop_{randint(1, 5)}.webp"
 
     return render_template('login.html', form=form, random=random_image)
 

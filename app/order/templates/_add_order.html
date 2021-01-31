@@ -1,0 +1,14 @@
+{% set modal_id='orderModalForm' %}
+{% set btn_id='addForm' %}
+{% set form_title='Add Order' %}
+
+
+{% block order %}
+
+    <button class="btn btn-success btn-lg btn-block" id="{{ btn_id }}" data-target="#{{ modal_id }}" data-toggle="modal">Add Order</button>
+
+    {% include 'partials/_modal_form.html' %}
+
+{% endblock %}
+
+
