@@ -23,10 +23,11 @@ DB orm: SqlAlchemy
 Frontend: Bootstrap + Karla font
 
 
+
 **how to start:**
 
 
-git clone:
+git clone git@github.com:wesolyigor/flask_shopping_app.git
 
 pip install -r requirements.txt
 
